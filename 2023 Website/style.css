@@ -1,7 +1,8 @@
   /* Navbar container */
 .navbar {
+  grid-area: 1 / 1 / 2 / 6;
   overflow: hidden;
-  background-color: #333;
+  background-color: #1D2D44;
   font-family: 'Times New Roman', Times, serif;
 }
 
@@ -9,7 +10,7 @@
 .navbar a {
   float: left;
   font-size: 16px;
-  color: white;
+  color: #000000;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -26,7 +27,7 @@
   font-size: 16px;
   border: none;
   outline: none;
-  color: white;
+  color: #000000;
   padding: 14px 16px;
   background-color: inherit;
   font-family: inherit; /* Important for vertical align on mobile phones */
@@ -35,14 +36,16 @@
 
 /* Add a red background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: #597491;
+  border-radius: 3px;
+  border-left-width:5px;
 }
 
 /* Dropdown content (hidden by default) */
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #fafafa;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -67,6 +70,21 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+/* Right floating contact button */
 .contact{
   float: right;
+  width: auto;
+  height: 20px;
+  width:20px;
 }
+.menubtn{
+  width:30px;
+  height: auto;
+}
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  }
