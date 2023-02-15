@@ -1,13 +1,21 @@
-  /* Navbar container */
-.navbar {
-  grid-area: 1 / 1 / 2 / 6;
+.grid-container{ /* Creating a grid container to ease creation and better orgainse my webpage layout */
+  display: grid;
+  grid-template-columns: [column1-start] 30px [column1-end] repeat(5, 1fr) [column7-start] 30px [column7-end];
+  grid-template-rows: [row1-start] 60px [row1-end]repeat(9, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  }
+ 
+ /* Navbar container */
+nav{
+  grid-area: 1 / 1 / 2 / 8;
   overflow: hidden;
   background-color: #1D2D44;
   font-family: 'Times New Roman', Times, serif;
 }
 
 /* Links inside the navbar */
-.navbar a {
+nav a {
   float: left;
   font-size: 16px;
   color: #000000;
@@ -35,7 +43,7 @@
 }
 
 /* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
+nav a:hover, .dropdown:hover .dropbtn {
   background-color: #597491;
   border-radius: 3px;
   border-left-width:5px;
@@ -70,21 +78,39 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
-/* Right floating contact button */
+/* contact button */
 .contact{
-  float: right;
-  width: auto;
-  height: 20px;
-  width:20px;
+width:35px;
+height:35px;
 }
-.menubtn{
+.menubtn{ /* menu button */
   width:30px;
   height: auto;
 }
-.grid-container{
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+
+  .floatright{
+    float: right; /* Class to float my elements to the right*/
   }
+  body{
+    margin: 0px; /* Removes gap between nav bar and top of webpage */
+  }
+  .profile-text{
+  grid-area: 3 / 3 / 5 / 7;
+    color:#000000;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #597491;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  .profile-img{
+    grid-area: 3 / 2 / 5 / 4;
+  }
+  .profile-img img{
+    object-fit: contain;
+    justify-self: start;
+    max-width: 100%;
+    max-height: 100%;
+    width: 20vw;
+    height: 40vh;
+  }
+ 
