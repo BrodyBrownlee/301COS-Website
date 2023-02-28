@@ -5,17 +5,31 @@
   grid-column-gap: 20px;
   grid-row-gap: 0px;
   }
- 
+
+  body{
+    background-color: #526784;
+    margin: 0px; /* Removes gap between nav bar and top of webpage */
+  }
  /* Navbar container */
-nav{
-  grid-area: 1 / 1 / 2 / 8;
-  overflow: hidden;
-  background-color: #1D2D44;
-  font-family: 'Times New Roman', Times, serif;
+ .banner{
+  grid-area: 2 / 1 / 2 / 10;
 }
-body{
-  background-color: #1e2e46;
-  margin: 0px; /* Removes gap between nav bar and top of webpage */
+.banner img{
+  object-fit: cover;
+  width: 100%;
+  height: 20vh;
+  margin:0;
+  z-index: 1;
+  border-bottom: 5px solid #d5b9a8;
+}
+nav{
+  grid-area: 1 / 1 / 2 / 10;
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+  overflow: hidden;
+  background-color: #79798c;
+  font-family: 'Times New Roman', Times, serif;
 }
 /* Links inside the navbar */
 nav a {
@@ -26,7 +40,24 @@ nav a {
   padding: 14px 16px;
   text-decoration: none;
 }
-
+/* Add a blue background color to navbar links on hover */
+nav a:hover, .dropdown:hover .dropbtn, .contact:hover {
+  background-color: #597491;
+  border-radius: 3px;
+  border-left-width:5px;
+}
+.contact{
+  width:35px;
+  height:35px;
+  }
+.menubtn{ /* menu button */
+    width: 35px;
+    height: auto;
+}
+  
+.floatright{
+  float: right; /* Class to float my elements to the right*/
+}
 /* The dropdown container */
 .dropdown {
   float: left;
@@ -44,24 +75,40 @@ nav a {
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 0; /* Important for vertical align on mobile phones */
 }
-
-/* Add a blue background color to navbar links on hover */
-nav a:hover, .dropdown:hover .dropbtn, .contact:hover {
-  background-color: #597491;
-  border-radius: 3px;
-  border-left-width:5px;
-}
-
 /* Dropdown content (hidden by default) */
 .dropdown-content {
   display: none;
-  position: absolute;
+  position: fixed;
   background-color: #fafafa;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index:  100;
 }
 
+
+
+@keyframes growDown{
+  0%{
+    transform: scaleY(0);
+  }
+  80%
+  {
+transform: scaleY(1.1);
+  }
+  100%
+  {
+transform: scaleY(1);
+  }
+}
+  @keyframes growUp{
+    0%{
+      transform: scaleY(1);
+    }
+    100%
+    {
+  transform: scaleY(0);
+    }
+}
 /* Links inside the dropdown */
 .dropdown-content a {
   float: none;
@@ -70,71 +117,62 @@ nav a:hover, .dropdown:hover .dropbtn, .contact:hover {
   text-decoration: none;
   display: block;
   text-align: left;
+  z-index:  100;
 }
 /*class for dropdown menu onclick*/
 .showDropdown{
+  animation: growDown 300ms ease-in-out forwards;
+  transform-origin: top center;
+  background-color: #ddd;
+  display: block;
+}
+/*class for removing dropdown*/
+.removeDropdown{
+  animation: growUp 300ms ease-in-out  forwards;
+  transform-origin: top center;
   background-color: #ddd;
   display: block;
 }
 /* contact button */
-.contact{
-width:35px;
-height:35px;
-}
-.menubtn{ /* menu button */
-  width:30px;
-  height: auto;
-}
-
-  .floatright{
-    float: right; /* Class to float my elements to the right*/
-  }
   .profile-text{
     grid-area: 3 / 3 / 7 / 7;
     margin-top: 10vh;
     margin-left: 30px;
     color:#000000;
     font-family: 'Times New Roman', Times, serif;
-    background-color: #597491;
+    background-color: #8e777a;
     border-radius: 5px;
     padding: 5px;
     height: 50%;
     font-size: clamp(1.0rem, 2vw, 1.5rem);
     overflow: hidden;
   }
+  .profile-title{
+    grid-area: 3 / 3 / 7 / 7 ;
+    margin-left:2vw;
+  }
   .profile-img{ /* can't add sizing css to this otherwise it doesn't work */
-    grid-area: 3 / 2 / 5 / 4;
+    grid-area: 4 / 1 / 5 / 4;
   }
   .profile-img img{
-    object-fit: contain;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
+    border:solid #d5b9a8;
+    object-fit: fill;
     max-width: 100%;
     max-height: 100%;
+    margin: 2vw;
     width: 20vw;
-    height: 40vh;
   }
- .color{
-  grid-area:  2 / 1 / 3 / 8;
-  background-color: #416388;
- }
- .form1{  
-  grid-area:  2 / 2 / 5 / 5;
-  justify-self: center;
+ .form1{  /*laing out the form for my activities page*/
+  grid-area:  3 / 2 / 5 / 5;
+  margin-top: 15%;
   height: 60vh;
   width:100%;
+  border: none;
  }
-.video1{
+
+.video1{ /*laying out videos for the videos page */
   grid-area: 3 / 2 / 5 / 5;
   margin-top: 5%;
   height: 50vh;
   width: 100%;
-}
-.banner{
-  grid-area: 2 / 1 / 2 / 10;
-}
-.banner img{
-  object-fit: cover;
-  width: 100%;
-  height: 20vh;
 }
