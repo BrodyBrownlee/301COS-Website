@@ -1,6 +1,5 @@
 <?php
 //connect to database
-include 'includes/connect.php';
 include "headsection.php";
 include 'includes/session.php';
 ?>

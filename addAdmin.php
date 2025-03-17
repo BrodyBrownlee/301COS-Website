@@ -6,7 +6,6 @@ if(isset($_GET['id'])){
   exit;
 }
 
-include 'includes/connect.php';
 // include 'includes/session.php';
 //updates the account with the id of the row selected to an admin 
 $sql = "UPDATE users SET accounttype = 'admin' WHERE id=:id";

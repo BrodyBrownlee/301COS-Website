@@ -1,6 +1,5 @@
 <?php 
 //connect to database
-include 'includes/connect.php';
 //includes the headsection.php
 include "headsection.php";
 //if the current account is not an  account
